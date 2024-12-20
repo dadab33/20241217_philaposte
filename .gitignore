@@ -1,0 +1,60 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+cards-game/dist
+cards-game/tmp
+cards-game/out-tsc
+cards-game/bazel-out
+
+cards-game-non-fini/dist
+cards-game-non-fini/tmp
+cards-game-non-fini/out-tsc
+cards-game-non-fini/bazel-out
+
+config-exemple/dist
+config-exemple/tmp
+config-exemple/out-tsc
+config-exemple/bazel-out
+
+mon-premier-projet-angular/dist
+mon-premier-projet-angular/tmp
+mon-premier-projet-angular/out-tsc
+mon-premier-projet-angular/bazel-out
+
+# Node
+cards-game/node_modules
+cards-game-non-fini/node_modules
+config-exemple/node_modules
+mon-premier-projet-angular/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db

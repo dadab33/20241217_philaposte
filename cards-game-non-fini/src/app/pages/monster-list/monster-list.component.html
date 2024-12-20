@@ -1,0 +1,18 @@
+<phila-search-bar [(search)]="search"></phila-search-bar>
+<div id="card-list">
+  @for (monster of filteredMonsters(); track $index) {
+    <phila-card [monster]="monster"></phila-card>
+  }
+</div>
+
+@if (filteredMonsters().length == 0) {
+  <div>
+    No monster found
+  </div>
+} @else {
+  <div>
+    {{filteredMonsters().length}} monster(s) found !
+  </div>
+}
+
+<button (click)="addMonster()">Add monster</button>

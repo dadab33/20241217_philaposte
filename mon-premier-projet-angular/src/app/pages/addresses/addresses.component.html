@@ -1,0 +1,11 @@
+<div>
+    <input type="text" [(ngModel)]="searchValue" />
+    <div>La valeur de recherche de l'utilisateur est la suivante {{ searchValue }}</div>
+    <button (click)="search()">Rechercher</button>
+    <div class="address-list">
+    @for (feature of features; track $index) {
+        <p>{{ feature.properties.label }} / {{ feature.properties.score }}</p>
+        <p>Coordonnées : {{feature.geometry?.coordinates}}</p>
+    }
+    </div>
+</div>

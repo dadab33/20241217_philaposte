@@ -1,0 +1,8 @@
+{
+    "development": {
+        "url": "http://localhost.dev:3000"
+    },
+    "production": {
+        "url": "http://localhost.prod:3000"   
+    }
+}

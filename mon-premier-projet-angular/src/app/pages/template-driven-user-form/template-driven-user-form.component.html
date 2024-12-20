@@ -1,0 +1,20 @@
+<h2>Template Driven User Form</h2>
+
+<form #myForm="ngForm" (submit)="onSubmit()">
+    <div>
+        <label for="name">Nom : </label>
+        <input type="text" id="name" name="name" [(ngModel)]="user.lastName" />
+    </div>
+
+    <div>
+        <label for="firstname">Prenom : </label>
+        <input type="text" id="firstname" name="firstname" [(ngModel)]="user.firstName" />
+    </div>
+
+    <div>
+        <label for="login">Login : </label>
+        <input type="text" id="login" name="login" [(ngModel)]="user.login" required />
+    </div>
+
+    <button type="submit" [disabled]="myForm.invalid" >Envoyer</button>
+</form>

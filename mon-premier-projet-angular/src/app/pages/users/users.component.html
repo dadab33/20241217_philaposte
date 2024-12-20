@@ -1,0 +1,10 @@
+<div class="user-list" [ngClass]="{'background': users.length > 0}">
+    @for (user of users; track $index) {
+        <div class="user">
+        <p appTitle>Name : {{user.firstName}} {{user.lastName}}</p>
+        <p>Login : {{user.login}}</p>
+        </div>
+    } @empty {
+        <div class="info">Aucun utilisateur n'est affichable</div>
+    }
+</div>

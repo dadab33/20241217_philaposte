@@ -1,0 +1,28 @@
+<!--<app-search-bar [search]="search" (searchBtnClicked)="increaseCount()" (searchChange)="search = $event" />-->
+<!--<app-search-bar [(search)]="search" [(count)]="count" />
+
+<div>Search : {{search}}</div>
+<div>Click count : {{count}}</div>
+-->
+<!--<div id="card-list">
+  <app-playing-card [my-monster]="monster1"></app-playing-card>
+  <app-playing-card [my-monster]="monster1"></app-playing-card>
+</div>-->
+
+<app-search-bar [(search)]="search"></app-search-bar>
+
+<div id="card-list">
+  @for (monster of filterMonsters(); track monster.id) {
+    <app-playing-card [monster]="monster" (click)="openMonster(monster)" />
+  } @empty {
+    <div class="center"> No monster found !</div>  
+  }
+</div>
+
+@if (filterMonsters().length > 0) {
+  <div class="center"> Found {{filterMonsters().length}} Monster(s) !</div>
+}
+
+<div class="center">
+  <button (click)="addMonster()">Add Monster</button>
+</div>

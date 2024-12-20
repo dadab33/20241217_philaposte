@@ -1,0 +1,35 @@
+<h2>Reactive User Form</h2>
+
+<form [formGroup]="formGroup" (submit)="onSubmit()">
+    <div>
+        <label for="name">Nom : </label>
+        <input type="text" id="name" name="name" formControlName="lastName" />
+    </div>
+
+    <div>
+        <label for="firstname">Prenom : </label>
+        <input type="text" id="firstname" name="firstname" (blur)="onBlur()" formControlName="firstName" />
+
+        @if (formGroup.get('firstName')?.hasError('maxlength')) 
+        {
+            <div class="error-message">La taille est trop grande !!!</div>
+        }
+
+        @if (formGroup.get('firstName')?.hasError('minlength')) 
+        {
+            <div class="error-message">La taille est trop petite !!!</div>
+        }
+    </div>
+
+    <div>
+        <label for="login">Login : </label>
+        <input type="text" id="login" name="login" formControlName="login" />
+
+        @if (formGroup.get('login')?.touched && formGroup.get('login')?.hasError('required')) 
+        {
+            <div class="error-message">Le champs est obligatoire</div>
+        }
+    </div>
+
+    <button type="submit" [disabled]="formGroup.invalid" >Envoyer</button>
+</form>

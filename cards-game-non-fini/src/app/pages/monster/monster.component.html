@@ -1,0 +1,26 @@
+<div id="monster">
+    <div class="preview">
+        <phila-card [monster]="monster"></phila-card>
+    </div>
+
+    <div class="form">
+        <form [formGroup]="monFormGroup" (submit)="onSubmit()">
+            <div class="form-field">
+                <label for="name">Nom : </label>
+                <input id="name" name="name" type="text" formControlName="name" />
+            </div>
+        
+            <div class="form-field">
+                <label for="hp">HP : </label>
+                <input id="hp" name="hp" type="number" formControlName="hp" />
+            </div>
+
+            <div class="form-field">
+                <label for="figCaption">Légende : </label>
+                <input id="figCaption" name="figCaption" type="text" formControlName="figCaption" />
+            </div>
+        
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>

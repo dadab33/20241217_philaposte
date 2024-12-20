@@ -1,0 +1,29 @@
+<div>
+  <app-header></app-header>
+  <phila-btn content="Valider" (btnClicked)="validerClicked()"></phila-btn>
+  <phila-btn content="Enregistrer" (btnClicked)="enregistrerClicked()"></phila-btn>
+
+  <button (click)="toggleCompteursVisibility()">Cacher les compteurs</button>
+
+  <!-- <div [hidden]="!compteursVisibles">
+      <app-compteur [nomBouton]="nomBouton1" [compteur]="compteurBoutonValider"></app-compteur>
+  </div> -->
+
+  <!-- <div *ngIf="!compteursVisibles">
+    <app-compteur [nomBouton]="nomBouton1" [compteur]="compteurBoutonValider"></app-compteur>
+  </div> -->
+
+  @if (compteursVisibles) {
+    <app-compteur [nomBouton]="nomBouton1" [compteur]="compteurBoutonValider"></app-compteur>
+    <!-- <app-compteur [nomBouton]="nomBouton2" [compteur]="compteurBoutonEnregistrer"></app-compteur> -->
+  } @else {
+    <p>Les compteurs sont supprimés !</p>
+  }
+
+  <button (click)="goToUsersPage()">Go to Users page !</button>
+  <button (click)="goToAddressesPage()">Go to Addresses page !</button>
+  <button (click)="goToTemplateFormPage()">Go to Template form page !</button>
+  <button (click)="goToReactiveFormPage()">Go to Reactive form page !</button>
+
+  <router-outlet></router-outlet>
+</div>
